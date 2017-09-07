@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<!-- This is the title-->
+		
+		<title>Registration</title>
+		<meta name="description" content="">
+		
+		<!-- Mobile viewport optimized -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- Bootstrap CSS -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="includes/css/bootstrap-glyphicons.css" rel="stylesheet">
+		
+		<!-- Custom CSS -->
+		<link href="Style.css" rel="stylesheet">
+		
+		<!-- Include Modernizr in the head, before any other Javascript -->
+		<script src="includes/js/modernizr-2.6.2.min.js"></script>
+		<script src="script.js"></script>
+
+		<script>
+
+function validateform(){ 
+	console.log("Inside validateForm");
+
+var name=document.form1.inputName.value;  
+  
+ if (name==null || name==""){ 
+
+   alert("Name can't be blank");  
+   return false;  
+ } 
+
+ var email=document.form1.inputEmail.value;
+
+ if (email==null || email==""){
+
+ 	alert("Email can't be blank");  
+	return false; 
+
+ }
+
+ else
+ {
+	var atposition=email.indexOf("@");  
+ 	var dotposition=email.lastIndexOf(".");  
+ 	if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length)
+ 	{  
+   		alert("Enter valid email id");  
+   		return false;
+	}  
+}  
+
+var age=document.form1.inputAge.value;
+var intAge= parseInt(age);
+console.log("Age: after parse" + parseInt(age));
+if (intAge<7){
+
+	alert("You must be 15 or above to attend the fest.");  
+  	return false; 
+
+}
+
+}
+		</script>
+		
+	</head>
+
+<body>
+</center>
+
+<div class="main">
+	
+	<div class="header">
+	<br>										
+		<h4> <center><strong> Lit Fest Registration 2017</strong></center></h4>
+	</div><!-- end header -->
+												
+	<div class="body">
+	<center>
+
+		<form class="form-horizontal" name="form1" onsubmit="return validateform() ;">
+			
+			<div class="form-group">
+				<label class="col-lg-2 control-label" for="inputName">Name</label>
+				<div class="col-lg-10">
+					<input class="form-control" id="inputName" placeholder="Name" type="text">
+				</div>
+			</div>
+
+			<br>
+			
+			<div class="form-group">
+				<label class="col-lg-2 control-label" for="inputEmail">Email</label>
+				<div class="col-lg-10">
+					<input class="form-control" id="inputEmail" placeholder="Email" type="email">
+				</div>
+			</div>
+
+			<br>
+
+			<div class="form-group">
+				<label class="col-lg-2 control-label" for="inputAge">Age</label>
+				<div class="col-lg-10">
+					<input class="form-control" id="inputAge" placeholder="Age" type="text">
+				</div>
+			</div>
+			
+			<br>
+
+			<div class="form-group">
+				<label class="col-lg-2 control-label" for="inputAddress">Address</label>
+				<div class="col-lg-10">
+					<textarea class="form-control" id="inputMessage" placeholder="Address" rows="3"></textarea>
+					<br>
+					<br>
+					<button class="btn btn-success" type="submit">Send!</button>
+				</div>
+			</div>
+		</form>
+	</center>
+	</div>
+</div>
+</center>	
+</body>
+
+<!-- end body -->
